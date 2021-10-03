@@ -7087,43 +7087,19 @@ MonoBehaviour:
   tutorialValue: 4096
   activateOnUsage: {fileID: 0}
   maxSensitivity: 1
-  minSensitivity: 0.01
-  sensitivityIncrSpeed:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0.0041656494
-      value: 0.49764252
-      inSlope: 0.5044589
-      outSlope: 0.5044589
-      tangentMode: 34
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 1
-      value: 1
-      inSlope: 0.5044589
-      outSlope: 0.5044589
-      tangentMode: 34
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  sensitivityFadeSpeed:
+  maxLength: 400
+  sensitivityWrtLength:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0.0023498535
-      inSlope: 0.2516184
-      outSlope: 0.2516184
+      value: 0
+      inSlope: 0
+      outSlope: 0
       tangentMode: 0
       weightedMode: 0
       inWeight: 0
-      outWeight: 0.1875
+      outWeight: 0
     - serializedVersion: 3
       time: 1
       value: 1
