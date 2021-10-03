@@ -31,7 +31,9 @@ public class OrganizationController : MonoBehaviour
     public float maxRewardedTime = 5;
     public AnimationCurve rewardWrtTime;
     public TutorialActuator.TriggeringParams rewardParams;
+    public TutorialActuator.TriggeringParams escParams;
     public string bonusDisplayFormat = "Speed bounus: {0} exerience points!";
+    public string escNotificationDisplayFormat = "If you end your journey before utilizing all missiles, your experience will not be saved: the command tend not to trust thouse who flee the field with no apparent reason";
 
     private State _state;
     private const State positionStates = State.operationBase | State.workpoint;
@@ -105,13 +107,23 @@ public class OrganizationController : MonoBehaviour
     }
 
     // Update is called once per frame
+    protected bool escapeNotified = false;
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            WarpEffect.isActive = false;
 
-            EndSession();
+            if (escapeNotified)
+            {
+                WarpEffect.isActive = false;
+                EndSession(applyExpGain: false);
+            }
+            else
+            {
+                escapeNotified = true;
+                escParams.text = string.Format(escNotificationDisplayFormat, PlayerData.instance.runtime.experienceGain);
+                TutorialActuator.instance.Trigger(this, escParams, new BaseTutorialActuator.TriggeringState());
+            }
         }
     }
 
@@ -211,19 +223,19 @@ public class OrganizationController : MonoBehaviour
         SceneManager.sceneLoaded += SceneLoadСallback;
         //initialize skybox, lightning, etc
     }
-    private void EndSession()
+    private void EndSession(bool applyExpGain = true)
     {
         var tf = PlayerData.instance.runtime.rotationProvider.tutorialValue;
         if (!PlayerData.instance.tutorialProgress.HasFlag(tf))
         {
             PlayerData.instance.tutorialProgress = PlayerData.instance.tutorialProgress | tf;
         }
-        
+
         TutorialActuator.instance.AbordAndClearAllOnce();
         SceneManager.UnloadSceneAsync(playerController.gameObject.scene);
         snitch?.SendAndDispose();
         snitch = null;
-        PlayerData.instance.EndSession();
+        PlayerData.instance.EndSession(applyExpGain);
     }
 
     private void SceneLoadСallback(Scene scene, LoadSceneMode mode)

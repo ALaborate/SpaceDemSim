@@ -235,7 +235,7 @@ public abstract class RotationProvider : CrossPlatformBehaviour, System.IDisposa
     protected void Start()
     {
         Translator.instance.SubscribeToTranslation(new Translator.Query(this));
-        activateOnUsage?.SetActive(false);
+        if (activateOnUsage != null) { activateOnUsage.SetActive(false); }
     }
 
     public struct Feedback
@@ -255,6 +255,6 @@ public abstract class RotationProvider : CrossPlatformBehaviour, System.IDisposa
 
     public virtual void Dispose()
     {
-        activateOnUsage?.SetActive(false);
+        if (activateOnUsage != null) activateOnUsage.SetActive(false);
     }
 }

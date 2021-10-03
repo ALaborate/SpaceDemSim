@@ -200,7 +200,18 @@ MonoBehaviour:
     textToSplitShow: Overriden
     textToSolidShow: Overriden
     noSplit: 1
+  escParams:
+    buttons: 0
+    timeToShow: 12
+    radius: 0
+    splitLabeling: 
+    textToSplitShow: 
+    textToSolidShow: 
+    noSplit: 1
   bonusDisplayFormat: 'Speed bounus: {0} exerience points!'
+  escNotificationDisplayFormat: 'If you end your journey before utilizing all missiles,
+    your experience will not be saved: the command tend not to trust thouse who flee
+    the field with no apparent reason'
 --- !u!4 &125483105
 Transform:
   m_ObjectHideFlags: 0
@@ -403,6 +414,9 @@ MonoBehaviour:
   idleVisorColor: {r: 1, g: 1, b: 1, a: 0.3529412}
   hittingVisorColor: {r: 1, g: 0, b: 0, a: 0.3529412}
   missileCount: {fileID: 1359699660}
+  formatText: 'Missile count: {0}
+
+    Experience gain: {1}'
 --- !u!1 &1048275385
 GameObject:
   m_ObjectHideFlags: 0
@@ -904,4 +918,7 @@ MonoBehaviour:
     textToSolidShow: 
     noSplit: 1
   controllerTutorialAcceptDuration: 3
+  outOfAmmoStr: Out of ammo. Return to base.
+  allClearStr: All clear, ready to proceed!
+  lNlStr: Locked and loaded, ready to proceed.
   btn: {fileID: 0}

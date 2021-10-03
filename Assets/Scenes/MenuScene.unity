@@ -4992,7 +4992,7 @@ MonoBehaviour:
     to control your rotation. Press a bottom-right button to hold rotation (this
     sets reference of accelerometer).
   tutorialValue: 64
-  activateOnUsage: {fileID: 0}
+  activateOnUsage: {fileID: 1168403948}
   inputFilter: 0.95
 --- !u!1001 &1160868093
 PrefabInstance:
@@ -6108,9 +6108,10 @@ MonoBehaviour:
   playButton: {fileID: 1229027125}
   controllerSelectionDd: {fileID: 1908068633}
   controllerSelectionText: {fileID: 1403366698}
+  controllerChoisExpTreshold: 200
   controllerSelectionAvailable: Select a controller for next journey
-  controllerSelectionForbiden: Gain experience with all available controllers to
-    gain ability to select one yourself
+  controllerSelectionUndeserved: Finnish journey on all available controllers, or
+    gain {0} experience to gain ability to choose controller
 --- !u!224 &1403366697 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 4627665722181710646, guid: 5522613aa6e4c8c438b319d15c43b4df,
