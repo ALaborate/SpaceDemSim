@@ -76,6 +76,10 @@ public class Translator : CrossPlatformBehaviour
     {
         var serLangs = JsonConvert.SerializeObject(languages, Formatting.Indented);
         File.WriteAllText(langFilePdPath, serLangs);
+        if (isEditor)
+        {
+            File.WriteAllText(langFileSaPath, serLangs);
+        }
     }
     // Start is called before the first frame update
     void Start()

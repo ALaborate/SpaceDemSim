@@ -14,7 +14,6 @@ public class ReadyToWarpButton : StateControllerBehaviour<OrganizationController
     public float tutorialAcceptDuration = 5f;
     [Space]
     public TutorialActuator.TriggeringParams onNewController;
-    public float controllerTutorialAcceptDuration = 10;
     [Header("UI")]
     public string outOfAmmoStr = "Out of ammo. Return to base.";
     public string allClearStr = "All clear, ready to proceed!";

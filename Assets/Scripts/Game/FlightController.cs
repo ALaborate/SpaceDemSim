@@ -234,8 +234,8 @@ public abstract class RotationProvider : CrossPlatformBehaviour, System.IDisposa
 
     protected void Start()
     {
-        Translator.instance.SubscribeToTranslation(new Translator.Query(this));
         if (activateOnUsage != null) { activateOnUsage.SetActive(false); }
+        Translator.instance.SubscribeToTranslation(new Translator.Query(this));
     }
 
     public struct Feedback

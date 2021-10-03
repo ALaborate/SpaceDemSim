@@ -192,8 +192,8 @@ public class PlayerData : MonoBehaviour
         None = 0,
         SeeMine = 1 << 0, FindMine = 1 << 1,
         WarpFromBase = 1 << 2, WarpFromSpace = 1 << 3, OutOfAmmo = 1 << 4,
-        AccelerometerController = 1 << 6, ButtonsController = 1 << 7, TapController = 1 << 8, DragController = 1 << 9,
         TweakTheSettings = 1 << 10, ReadTheLore = 1 << 11,
+        AccelerometerController = 1 << 6, ButtonsController = 1 << 7, TapController = 1 << 8, DragSpeedController = 1 << 9, DragMoveController = 1<<12,
 
     }
 

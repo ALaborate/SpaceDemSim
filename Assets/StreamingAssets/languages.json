@@ -41,7 +41,17 @@
     "Overriden": "Overriden",
     "Target that mine": "Target that mine",
     "Come on, give it at least a minute": "Come on, give it at least a minute",
-    "Come on!": "Come on!"
+    "Come on!": "Come on!",
+    "You are using accelerometer controller. Rotate your phone physically to control your rotation. Press a bottom-right button to hold rotation (this sets reference of accelerometer).": "You are using accelerometer controller. Rotate your phone physically to control your rotation. Press a bottom-right button to hold rotation (this sets reference of accelerometer).",
+    "Familiarize yourself with lore in instructions": "Familiarize yourself with lore in instructions",
+    "Check instructions": "Check instructions",
+    "Finnish journey on all available controllers, or gain {0} experience to gain ability to choose controller": "Finnish journey on all available controllers, or gain {0} experience to gain ability to choose controller",
+    "If you end your journey before utilizing all missiles, your experience will not be saved: the command tend not to trust thouse who flee the field with no apparent reason": "If you end your journey before utilizing all missiles, your experience will not be saved: the command tend not to trust thouse who flee the field with no apparent reason",
+    "TouchMove": "TouchMove",
+    "You are using TouchMove controller. Works intuitively: drag your finger on touchscreen and see yourself.": "You are using TouchMove controller. Works intuitively: drag your finger on touchscreen and see yourself.",
+    "TouchSpeed": "TouchSpeed",
+    "You are using touch speed controller. Touch your screen anywhere and drag your finger in a direction of desired rotation. Release your finger to stop.": "You are using touch speed controller. Touch your screen anywhere and drag your finger in a direction of desired rotation. Release your finger to stop.",
+    "Select language:": "Select language:"
   },
   "ru": {
     "Settings": "Настройки",
@@ -86,6 +96,16 @@
     "Ok! Now go to settings": "Хорошо! Теперь - настройки",
     "Try different languages to pass this tutorial step": "Попробуй разные языки, чтобы пройти дальше",
     "Come on, give it at least a minute": "Come on, give it at least a minute",
-    "Come on!": "Come on!"
+    "Come on!": "Come on!",
+    "You are using accelerometer controller. Rotate your phone physically to control your rotation. Press a bottom-right button to hold rotation (this sets reference of accelerometer).": "You are using accelerometer controller. Rotate your phone physically to control your rotation. Press a bottom-right button to hold rotation (this sets reference of accelerometer).",
+    "Familiarize yourself with lore in instructions": "Familiarize yourself with lore in instructions",
+    "Check instructions": "Check instructions",
+    "Finnish journey on all available controllers, or gain {0} experience to gain ability to choose controller": "Finnish journey on all available controllers, or gain {0} experience to gain ability to choose controller",
+    "If you end your journey before utilizing all missiles, your experience will not be saved: the command tend not to trust thouse who flee the field with no apparent reason": "If you end your journey before utilizing all missiles, your experience will not be saved: the command tend not to trust thouse who flee the field with no apparent reason",
+    "TouchMove": "TouchMove",
+    "You are using TouchMove controller. Works intuitively: drag your finger on touchscreen and see yourself.": "You are using TouchMove controller. Works intuitively: drag your finger on touchscreen and see yourself.",
+    "TouchSpeed": "TouchSpeed",
+    "You are using touch speed controller. Touch your screen anywhere and drag your finger in a direction of desired rotation. Release your finger to stop.": "You are using touch speed controller. Touch your screen anywhere and drag your finger in a direction of desired rotation. Release your finger to stop.",
+    "Select language:": "Select language:"
   }
 }
