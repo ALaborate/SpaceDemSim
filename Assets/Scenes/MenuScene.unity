@@ -1026,8 +1026,12 @@ MonoBehaviour:
     establish visual contact and confirm presence of a mine. Than you need to lighten
     up the mine with specific radio signal. After short time ship locks on it. This
     allows to fire a missile and destroy what may otherwise become someone death.
-    \n\nThats it. Next steps are up to you and whatever choise you would make, I
-    am sure you will manage. Nevertheless, good luck: it won't hurt. "
+    \n\nIf you do your job - you become more experienced. In these circumstances
+    experience is about your reliability in the eyes of command rather than about
+    skills. As command deem you more trustworthy, they are more likely to assign
+    you on different missions which may just what you want. \n\nThats it. Next steps
+    are up to you and whatever choise you would make, I am sure you will manage.
+    Nevertheless, good luck: it won't hurt. "
 --- !u!222 &186914332
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4849,7 +4853,7 @@ MonoBehaviour:
     some data. So I created this app. Its a game for users and a tool for me. As
     you play, it sends to me information about your speed and type of your input.
     I plan to use it to determine relative convinience of input methods. No confidential
-    info is stored or transfered (because it will not help me achive stated goal).
+    data is stored or transfered (because it will not help me achive stated goal).
     On that note, I deeply appreciate that you devote your time to my (questinable
     in its value) attempt on  doing research. \n\nI think I will update \"gaming\"
     part of this app in the future for two reasons. First - I'd like to make games,
