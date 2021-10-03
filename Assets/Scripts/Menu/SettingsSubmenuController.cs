@@ -62,7 +62,7 @@ public class SettingsSubmenuController : SubmenuController
     {
         langSelection.ClearOptions();
         var newOptions = new List<Dropdown.OptionData>();
-        newOptions.AddRange(from od in Translator.instance.GetLanguageNames() select new Dropdown.OptionData(od));
+        newOptions.AddRange(from od in Translator.instance.GetLanguageNames() where od != Translator.defaultLangName select new Dropdown.OptionData(od));
         langSelection.AddOptions(newOptions);
     }
 }
