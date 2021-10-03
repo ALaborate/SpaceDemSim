@@ -79,6 +79,14 @@ public class SnitchOfNetwork //: IDisposable
         {
             if (task.IsCanceled || task.IsFaulted)
             {
+                if (File.Exists(pendingLogsPath))
+                {
+                    var fi = new FileInfo(pendingLogsPath);
+                    if (fi.Length > 100_000_000L)
+                    {
+                        File.Delete(pendingLogsPath);
+                    }
+                }
                 File.AppendAllText(pendingLogsPath, report);
                 Debug.Log("Send failure, storing locally.\n" + task.Exception.ToString());
             }
