@@ -34,6 +34,7 @@ public class MenuController : MonoBehaviour
     void Start()
     {
         MineTutorialTrigger.TranslateAllParams(this);
+        Translator.instance.onNewLanguageSelected += s => MineTutorialTrigger.TranslateAllParams(this);
         AssignCallbacks();
         ShowNewState(State.tutorial);
     }

@@ -46,6 +46,7 @@ public class OrganizationController : MonoBehaviour
             controlButton.SetNewState(value);
         }
     }
+    public bool locationIsClear { get; private set; }
     private TapProvider tapProvider;
     private SnitchOfNetwork snitch;
 
@@ -88,6 +89,7 @@ public class OrganizationController : MonoBehaviour
                 db.onKill += () =>
                 {
                     state = state & (~State.leadingMissile);
+                    locationIsClear = true;
 
                     var t = new Test(distanceToTarget, targetViewportPosition.x, targetViewportPosition.y,
                     targetVelocityProjection.x, targetVelocityProjection.y, lastInitPointTime);
@@ -175,6 +177,7 @@ public class OrganizationController : MonoBehaviour
     Vector2 targetVelocityProjection, targetViewportPosition;
     private IEnumerator InitWorkpoint()
     {
+        locationIsClear = false;
         var initTime = Time.time;
         state = state & (~positionStates) | State.workpoint;
         var rot = Random.rotationUniform;
@@ -211,6 +214,7 @@ public class OrganizationController : MonoBehaviour
 
     private IEnumerator InitBase()
     {
+        locationIsClear = true;
         state = state & (~positionStates) | State.operationBase;
         // place base, ships, etc
         yield break;

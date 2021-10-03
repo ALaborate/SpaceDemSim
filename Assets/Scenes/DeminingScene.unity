@@ -880,6 +880,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4e318f0a434a7f45a350a8a29552438, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  organizator: {fileID: 125483104}
   onBaseText:
     buttons: 0
     timeToShow: 12
@@ -917,7 +918,6 @@ MonoBehaviour:
     textToSplitShow: 
     textToSolidShow: 
     noSplit: 1
-  controllerTutorialAcceptDuration: 3
   outOfAmmoStr: Out of ammo. Return to base.
   allClearStr: All clear, ready to proceed!
   lNlStr: Locked and loaded, ready to proceed.

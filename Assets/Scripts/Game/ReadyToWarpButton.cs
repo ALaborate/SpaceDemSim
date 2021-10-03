@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 public class ReadyToWarpButton : StateControllerBehaviour<OrganizationController.State>
 {
+    public OrganizationController organizator;
     [Header("Tutorial")]
     public TutorialActuator.TriggeringParams onBaseText;
     public float baseTutorialDelay = 30f;
@@ -44,7 +45,7 @@ public class ReadyToWarpButton : StateControllerBehaviour<OrganizationController
     // Update is called once per frame
     void Update()
     {
-        if ((state & OrganizationController.State.workpoint) > 0 && ((state & disablingStates) == 0))
+        if (organizator.locationIsClear && (state & OrganizationController.State.workpoint) > 0 && ((state & disablingStates) == 0))
         {
             if ((startedTutorials & PlayerData.TutorialProgress.WarpFromSpace) == 0)
             {
