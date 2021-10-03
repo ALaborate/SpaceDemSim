@@ -37,12 +37,14 @@ public class SettingsSubmenuController : SubmenuController
         MineTutorialTrigger.TranslateAllParams(this);
         if (!PlayerData.instance.tutorialProgress.HasFlag(PlayerData.TutorialProgress.TweakTheSettings))
         {
-            TutorialActuator.instance.Trigger(this, selectLanguage, new BaseTutorialActuator.TriggeringState());
+            var state = new BaseTutorialActuator.TriggeringState();
+            TutorialActuator.instance.Trigger(this, selectLanguage, state);
             btnBack.interactable = false;
             Translator.instance.onNewLanguageSelected += s =>
             {
                 PlayerData.instance.tutorialProgress = PlayerData.instance.tutorialProgress | PlayerData.TutorialProgress.TweakTheSettings;
                 btnBack.interactable = true;
+                state.abort = true;
             };
         }
     }
