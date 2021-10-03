@@ -38,6 +38,7 @@ public class InstructionsSubmenuController : SubmenuController
     {
         yield return new WaitForSeconds(minReadTime);
         btnBack.interactable = true;
+        backButtonEmulator.gameObject.SetActive(false);
         PlayerData.instance.tutorialProgress = PlayerData.instance.tutorialProgress | PlayerData.TutorialProgress.ReadTheLore;
     }
 }
