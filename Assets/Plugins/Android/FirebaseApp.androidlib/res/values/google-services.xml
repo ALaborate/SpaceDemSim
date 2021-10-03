@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources xmlns:tools="http://schemas.android.com/tools" tools:keep="@string/gcm_defaultSenderId,@string/google_storage_bucket,@string/project_id,@string/google_api_key,@string/google_crash_reporting_api_key,@string/google_app_id,@string/default_web_client_id">
+  <string name="gcm_defaultSenderId" translatable="false">605064922228</string>
+  <string name="google_storage_bucket" translatable="false">spacedemsimstoretrial.appspot.com</string>
+  <string name="project_id" translatable="false">spacedemsimstoretrial</string>
+  <string name="google_api_key" translatable="false">AIzaSyAhVmWznJGuxGDOqU0AHIdEQKbokNPMwmQ</string>
+  <string name="google_crash_reporting_api_key" translatable="false">AIzaSyAhVmWznJGuxGDOqU0AHIdEQKbokNPMwmQ</string>
+  <string name="google_app_id" translatable="false">1:605064922228:android:8f460a41f7cc179a157d21</string>
+  <string name="default_web_client_id" translatable="false">605064922228-3i9cqjkdv4iklimgqqmpqoahk569i1r5.apps.googleusercontent.com</string>
+</resources>

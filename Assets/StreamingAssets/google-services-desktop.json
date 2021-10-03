@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "605064922228",
+    "project_id": "spacedemsimstoretrial",
+    "storage_bucket": "spacedemsimstoretrial.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:605064922228:android:8f460a41f7cc179a157d21",
+        "android_client_info": {
+          "package_name": "com.DefaultCompany.SpaceDemSim"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "605064922228-3i9cqjkdv4iklimgqqmpqoahk569i1r5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAhVmWznJGuxGDOqU0AHIdEQKbokNPMwmQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "605064922228-3i9cqjkdv4iklimgqqmpqoahk569i1r5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
