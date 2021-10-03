@@ -45,6 +45,18 @@ public class ReadyToWarpButton : StateControllerBehaviour<OrganizationController
     // Update is called once per frame
     void Update()
     {
+        if ((state & OrganizationController.State.operationBase) > 0)
+        {
+            var provTutor = PlayerData.instance.runtime.rotationProvider.tutorialValue;
+            if (!PlayerData.instance.tutorialProgress.HasFlag(provTutor) && (startedTutorials & provTutor) == 0)
+            {
+                startedTutorials = startedTutorials | provTutor;
+                TutorialActuator.TriggerAll(this,
+                new BaseTutorialActuator.TriggeringParams(onNewController) { text = PlayerData.instance.runtime.rotationProvider.tutorialString },
+                new BaseTutorialActuator.TriggeringState());
+            }
+        }
+        
         if (organizator.locationIsClear && (state & OrganizationController.State.workpoint) > 0 && ((state & disablingStates) == 0))
         {
             if ((startedTutorials & PlayerData.TutorialProgress.WarpFromSpace) == 0)
@@ -82,13 +94,8 @@ public class ReadyToWarpButton : StateControllerBehaviour<OrganizationController
         {
             //base
             text.text = lNlStr;
-            var provTutor = PlayerData.instance.runtime.rotationProvider.tutorialValue;
-            if (!PlayerData.instance.tutorialProgress.HasFlag(provTutor))
-            {
-                TutorialActuator.TriggerAll(this,
-                new BaseTutorialActuator.TriggeringParams(onNewController) { text = PlayerData.instance.runtime.rotationProvider.tutorialString },
-                new BaseTutorialActuator.TriggeringState());
-            }
+
+
             if ((PlayerData.instance.tutorialProgress & PlayerData.TutorialProgress.WarpFromBase) == 0)
             {
                 StartCoroutine(DelayBaseTutorial());
