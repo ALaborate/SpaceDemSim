@@ -20,6 +20,7 @@ public class PlayerData : MonoBehaviour
 
     #region Persistents
     public int playerExperience { get; private set; }
+    public string language { get; private set; }
     public IList<string> availableShipNames { get; private set; }
     public IList<string> availableClusterNames { get; private set; }
     #endregion
@@ -31,6 +32,7 @@ public class PlayerData : MonoBehaviour
     public const char SEPARATOR = ',';
     public const string EXPERIENCE_KEY = "experience";
     public const string TUTORIAL_STATE_KEY = "tutorialProgress";
+    public const string LANG_KEY = "language";
 
     void Awake()
     {
@@ -41,9 +43,19 @@ public class PlayerData : MonoBehaviour
     {
         SavePersistents();
     }
+    void Start()
+    {
+        Translator.instance.onNewLanguageSelected += s =>
+        {
+            language = s;
+        };
+    }
 
     private void LoadPersistents()
     {
+        var lang = PlayerPrefs.GetString(LANG_KEY, Translator.defaultLangName);
+        language = lang;
+
         var ships = PlayerPrefs.GetString(SHIPS_KEY, string.Empty);
         if (!string.IsNullOrEmpty(ships))
         {
@@ -73,6 +85,7 @@ public class PlayerData : MonoBehaviour
         PlayerPrefs.SetString(SHIPS_KEY, string.Join(s, availableShipNames));
         PlayerPrefs.SetString(CLUSTERS_KEY, string.Join(s, availableClusterNames));
         PlayerPrefs.SetInt(EXPERIENCE_KEY, playerExperience);
+        PlayerPrefs.SetString(LANG_KEY, language);
         SaveTutorialProgress();
     }
     private void LoadTutorialProgress()
@@ -193,7 +206,7 @@ public class PlayerData : MonoBehaviour
         SeeMine = 1 << 0, FindMine = 1 << 1,
         WarpFromBase = 1 << 2, WarpFromSpace = 1 << 3, OutOfAmmo = 1 << 4,
         TweakTheSettings = 1 << 10, ReadTheLore = 1 << 11,
-        AccelerometerController = 1 << 6, ButtonsController = 1 << 7, TapController = 1 << 8, DragSpeedController = 1 << 9, DragMoveController = 1<<12,
+        AccelerometerController = 1 << 6, ButtonsController = 1 << 7, TapController = 1 << 8, DragSpeedController = 1 << 9, DragMoveController = 1 << 12,
 
     }
 

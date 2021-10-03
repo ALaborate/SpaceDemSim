@@ -32,6 +32,7 @@ public class PlaySubmenuController : SubmenuController
 
         PopulateControllersDd();
         RandomizeController();
+        OnBecomeVisible();
     }
 
     public override void OnBecomeVisible()
