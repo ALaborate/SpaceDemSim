@@ -941,6 +941,7 @@ GameObject:
   - component: {fileID: 186914330}
   - component: {fileID: 186914332}
   - component: {fileID: 186914331}
+  - component: {fileID: 186914333}
   m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
@@ -1024,6 +1025,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 186914329}
   m_CullTransparentMesh: 0
+--- !u!114 &186914333
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 186914329}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 017818a576c088e44869eaf5d5af35ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  allChildren: 0
+  templateQuery:
+    component: {fileID: 0}
+    blackListNames:
+    - tag
+    - name
+    whiteListNames: []
 --- !u!1 &195604016
 GameObject:
   m_ObjectHideFlags: 0
@@ -4753,6 +4773,7 @@ GameObject:
   - component: {fileID: 1042322789}
   - component: {fileID: 1042322791}
   - component: {fileID: 1042322790}
+  - component: {fileID: 1042322792}
   m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
@@ -4811,7 +4832,26 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Sorry, no story to tell yet...
+  m_Text: "Project SpaceDemSim is a mini game, as part of my masters thesis @KUBG
+    (kubg.edu.ua).\n\nThe objective of a thesis is to rank different methods of inputing
+    rotation by their conveniece. In order to come closer to objective truth, I need
+    some data. So I created this app. Its a game for users and a tool for me. As
+    you play, it sends to me information about your speed and type of your input.
+    I plan to use it to determine relative convinience of input methods. No confidential
+    info is stored or transfered (because it will not help me achive stated goal).
+    On that note, I deeply appreciate that you devote your time to my (questinable
+    in its value) attempt on  doing research. \n\nI think I will update \"gaming\"
+    part of this app in the future for two reasons. First - I'd like to make games,
+    preferably with some ambition for a positive impact. But my every project is
+    a sketchy prototype that can not be interesting because it is narrow and hard
+    to use. With this simple (very simple in its core mechanic!) game I have good
+    chances to finish it to the point when it is at least usable. I'd like to try.
+    Second reason is that the better game I have - the more data I collect. And the
+    more data I have - the more accurate results I could expect. \n\nI'm Gleb Kosiachenko
+    aka OMOH98 and this is not my only nickname. If you need to contact me, try t.me/OMOH98
+    or hykosiachenko.fitu20@kubg.edu.ua. \n\nI plan to make this game free and open-source
+    for reasons that are out of scope of this note. Try googling it on github.com
+    yourself. "
 --- !u!222 &1042322791
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4820,6 +4860,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1042322788}
   m_CullTransparentMesh: 0
+--- !u!114 &1042322792
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1042322788}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 017818a576c088e44869eaf5d5af35ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  allChildren: 0
+  templateQuery:
+    component: {fileID: 0}
+    blackListNames:
+    - tag
+    - name
+    whiteListNames: []
 --- !u!1 &1060054302
 GameObject:
   m_ObjectHideFlags: 0
