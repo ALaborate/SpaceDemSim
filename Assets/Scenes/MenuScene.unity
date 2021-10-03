@@ -1000,23 +1000,34 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "We dont have a good instructions just yet. But... \n\nYou are a part of
-    a big space cruiser, tasked (along with many others) with disabling space mines
-    left after big and devastating war in various regions of space. One play requires
-    you to clear the entire space cluster. Once you arrive there, your teammates
-    will scan cluster for coordinates of suspected mines there. Then your task would
-    be to do the folowing repeatedly: \n1. Report that you are observing no mines
-    and you are ready to proceed to the next point.\n2. Wait for the cruiser to exit
-    warp mode.\n3. Find the mine and highlight it with your laser (just focus the
-    center of screen on it). Missile head will capture your target and after a second,
-    cruiser crew will fire the missile.\n4. Continiue to highlight the mine until
-    it explodes. You will receive a reward for each mine destroyed. And a bonus,
-    if you destroyed the mine with one missile.\n5. Scan area for other mines and
-    potential hazzards, destroy them if necessary. Be sure not to fire at space debris
-    and asteroids as long as they not pose danger to your cruiser, or others.\n6.
-    Repeat the cycle while you have ready-to-fire missiles on board. You are free
-    to quit session earlier, but then you will receive only half of your reward for
-    each mine. "
+  m_Text: "So, you are interested in what you should do, aren't you? And, more importantly,
+    why should you do it. And eventualy, who you are. Well, the last question is
+    crucial, but that is up to you to choose. \n\nNow you are ready to enter world
+    of a game. In that world, as the story goes, there was a terrible war. Alas,
+    they happen from time to time. At some point of this war, one of the sides started
+    becoming desperate. They were not defeted, but it became apparent that their
+    chances to achieve their goals were vanishing. Alas, they were extremely confident
+    that their goals a right... for everyone. So they were desperately searching
+    hope to win at any cost. They stopped respecting their foes, stopped caring about
+    them. This may seem as an obvious thing - why would you care about your opponent?
+    Well when you are in a war with somebody, it is harder to care enought about
+    your own future and your future descendants than about someone you constantly
+    observe and engage - you foe.\n\nThence this desperate side, uncaring about us
+    as well as anything beside their declared goals, did many things. One was total
+    mining of a space. Their mines colud be found in close interstellar space in
+    fearing numbers. Thouse that come closer posess deadly threat, especialy considering
+    that relative velocity of two arbitrary objects in space is usualy extreme. So
+    we hunt thouse mines. Its kind of hard to spot a mine when its far away from
+    us. So this hunt is an ongoing and persistent process: we see thouse mines that
+    come closer, destroy them and than others come. \n\nYou always have a choice.
+    For now your options are to join this cause or stand back. If you join, you will
+    become a part of one of hunter ships crew. Thouse ships usualy warp to a suspected
+    location of a mine so, that their velocities are syncronized. Your job is to
+    establish visual contact and confirm presence of a mine. Than you need to lighten
+    up the mine with specific radio signal. After short time ship locks on it. This
+    allows to fire a missile and destroy what may otherwise become someone death.
+    \n\nThats it. Next steps are up to you and whatever choise you would make, I
+    am sure you will manage. Nevertheless, good luck: it won't hurt. "
 --- !u!222 &186914332
 CanvasRenderer:
   m_ObjectHideFlags: 0
