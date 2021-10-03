@@ -213,6 +213,12 @@ public class OrganizationController : MonoBehaviour
     }
     private void EndSession()
     {
+        var tf = PlayerData.instance.runtime.rotationProvider.tutorialValue;
+        if (!PlayerData.instance.tutorialProgress.HasFlag(tf))
+        {
+            PlayerData.instance.tutorialProgress = PlayerData.instance.tutorialProgress | tf;
+        }
+        
         TutorialActuator.instance.AbordAndClearAllOnce();
         SceneManager.UnloadSceneAsync(playerController.gameObject.scene);
         snitch?.SendAndDispose();

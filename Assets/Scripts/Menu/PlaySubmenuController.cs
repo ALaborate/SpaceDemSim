@@ -12,8 +12,9 @@ public class PlaySubmenuController : SubmenuController
     public Button playButton;
     public Dropdown controllerSelectionDd;
     public Text controllerSelectionText;
+    public int controllerChoisExpTreshold = 200;
     public string controllerSelectionAvailable = "Select a controller for next journey";
-    public string controllerSelectionForbiden = "Gain experience with all available controllers to gain ability to select one yourself";
+    public string controllerSelectionUndeserved = "Finnish journey on all available controllers, or gain {0} experience to gain ability to choose controller";
 
 
     protected void Awake()
@@ -36,14 +37,15 @@ public class PlaySubmenuController : SubmenuController
     public override void OnBecomeVisible()
     {
         //show ships etc
-        if (PlayerData.instance.tutorialProgress.HasFlag(PlayerData.instance.controllerTutorials))
+        if (PlayerData.instance.tutorialProgress.HasFlag(PlayerData.instance.controllerTutorials)
+            || PlayerData.instance.playerExperience >= controllerChoisExpTreshold)
         {
             controllerSelectionText.text = controllerSelectionAvailable;
             controllerSelectionDd.interactable = true;
         }
         else
         {
-            controllerSelectionText.text = controllerSelectionForbiden;
+            controllerSelectionText.text = string.Format(controllerSelectionUndeserved, controllerChoisExpTreshold);
             controllerSelectionDd.interactable = false;
         }
     }

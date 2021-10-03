@@ -87,7 +87,7 @@ public class ReadyToWarpButton : StateControllerBehaviour<OrganizationController
             {
                 TutorialActuator.TriggerAll(this,
                 new BaseTutorialActuator.TriggeringParams(onNewController) { text = PlayerData.instance.runtime.rotationProvider.tutorialString },
-                PlayerData.GetTutorialControllingState(provTutor, controllerTutorialAcceptDuration));
+                new BaseTutorialActuator.TriggeringState());
             }
             if ((PlayerData.instance.tutorialProgress & PlayerData.TutorialProgress.WarpFromBase) == 0)
             {
