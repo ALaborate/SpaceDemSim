@@ -34,7 +34,7 @@ public class AccelerometerProvider : RotationProvider
         }
 
         acc = referenceFrame.InverseTransformDirection(acc.normalized);
-        var delta = new Vector3(Mathf.Clamp(acc.y, -1, 1), Mathf.Clamp(acc.x, -1, 1));
+        var delta = new Vector3(Mathf.Clamp(-acc.y, -1, 1), Mathf.Clamp(acc.x, -1, 1));
         diffAngles = delta;
     }
 
