@@ -54,6 +54,7 @@ public class SnitchOfNetwork //: IDisposable
         });
     }
     Firebase.Auth.FirebaseUser user;
+    private static bool sendSuccess;
     public void SendAndDispose()
     {
         session.endTimeUTC = DateTime.UtcNow;
@@ -69,16 +70,17 @@ public class SnitchOfNetwork //: IDisposable
         catch { }
         var reportBytes = Encoding.UTF8.GetBytes("[" + pendingLogs + report + "]");
         // SendDirect(pendingLogsPath, report, reportBytes);
-        SendFb(pendingLogsPath, report, reportBytes);
-    }
-    private void SendFb(string pendingLogsPath, string report, byte[] whatToSend)
-    {
-        var di = FirebaseStorage.DefaultInstance;
-        var uid = user == null ? SystemInfo.deviceUniqueIdentifier : user.UserId;
-        var sref = di.RootReference.Child(uid).Child(DateTime.UtcNow.ToString("HHmmssddMyyyy") + "_report.json");
-        sref.PutBytesAsync(whatToSend).ContinueWith(task =>
+        sendSuccess = false;
+
+        var plWritingThread = new Thread(() =>
         {
-            if (task.IsCanceled || task.IsFaulted)
+            Thread.Sleep(4000);
+            if (sendSuccess)
+            {
+                sendSuccess = false;
+                File.WriteAllText(pendingLogsPath, string.Empty);
+            }
+            else
             {
                 if (File.Exists(pendingLogsPath))
                 {
@@ -89,14 +91,33 @@ public class SnitchOfNetwork //: IDisposable
                     }
                 }
                 File.AppendAllText(pendingLogsPath, report);
-                Debug.Log("Send failure, storing locally.\n" + task.Exception.ToString());
-            }
-            else
-            {
-                Debug.Log("Sent text");
-                File.WriteAllText(pendingLogsPath, string.Empty);
             }
         });
+        plWritingThread.Start();
+        SendFb(reportBytes);
+    }
+    private void SendFb(byte[] whatToSend)
+    {
+        try
+        {
+            var di = FirebaseStorage.DefaultInstance;
+            var uid = user == null ? SystemInfo.deviceUniqueIdentifier : user.UserId;
+            var sref = di.RootReference.Child(uid).Child(DateTime.UtcNow.ToString("HHmmssddMyyyy") + "_report.json");
+            sref.PutBytesAsync(whatToSend).ContinueWith(task =>
+            {
+                if (user == null || task.IsCanceled || task.IsFaulted)
+                {
+                    sendSuccess = false;
+                    Debug.Log("Send failure, storing locally.\n" + task.Exception.ToString());
+                }
+                else
+                {
+                    sendSuccess = true;
+                    Debug.Log("Sent text");
+                }
+            });
+        }
+        catch { }
     }
     private void SendDirect(string pendingLogsPath, string report, byte[] whatToSend)
     {
