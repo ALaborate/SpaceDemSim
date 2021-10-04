@@ -74,7 +74,8 @@ public class SnitchOfNetwork //: IDisposable
     private void SendFb(string pendingLogsPath, string report, byte[] whatToSend)
     {
         var di = FirebaseStorage.DefaultInstance;
-        var sref = di.RootReference.Child(user.UserId).Child(DateTime.UtcNow.ToString("HHmmssddMyyyy") + "_report.json");
+        var uid = user == null ? SystemInfo.deviceUniqueIdentifier : user.UserId;
+        var sref = di.RootReference.Child(uid).Child(DateTime.UtcNow.ToString("HHmmssddMyyyy") + "_report.json");
         sref.PutBytesAsync(whatToSend).ContinueWith(task =>
         {
             if (task.IsCanceled || task.IsFaulted)
@@ -82,7 +83,7 @@ public class SnitchOfNetwork //: IDisposable
                 if (File.Exists(pendingLogsPath))
                 {
                     var fi = new FileInfo(pendingLogsPath);
-                    if (fi.Length > 100_000_000L)
+                    if (fi.Length > 50_000_000L) //50 Mb
                     {
                         File.Delete(pendingLogsPath);
                     }
