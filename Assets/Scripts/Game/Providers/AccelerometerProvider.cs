@@ -7,12 +7,14 @@ public class AccelerometerProvider : RotationProvider
     public float inputFilter = 0.95f;
 
     private Transform referenceFrame;
+    private int originalSleepTimeout;
     // Start is called before the first frame update
     protected new void Start()
     {
         base.Start();
         referenceFrame = new GameObject().transform;
         referenceFrame.gameObject.hideFlags = HideFlags.HideAndDontSave;
+        originalSleepTimeout = Screen.sleepTimeout;
     }
 
     private Quaternion prevRotation = Quaternion.identity;
@@ -53,6 +55,16 @@ public class AccelerometerProvider : RotationProvider
     public override Vector2 GetAngles()
     {
         Update();
+        if (Screen.sleepTimeout == originalSleepTimeout)
+        {
+            Screen.sleepTimeout = SleepTimeout.NeverSleep;
+        }
         return diffAngles;
+    }
+
+    public override void Dispose()
+    {
+        base.Dispose();
+        Screen.sleepTimeout = originalSleepTimeout;
     }
 }
