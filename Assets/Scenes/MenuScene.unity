@@ -5421,7 +5421,7 @@ MonoBehaviour:
     textToSplitShow: Come on!
     textToSolidShow: Come on, give it at least a minute
     noSplit: 0
-  minReadTime: 30
+  minReadTime: 15
 --- !u!114 &1229027125 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4694711540672653636, guid: dd08b7c2a7619c7429da6c0bb4cf8f32,
@@ -6790,9 +6790,9 @@ MonoBehaviour:
     timeToShow: 10
     radius: 0
     splitLabeling: 
-    textToSplitShow: Select language
-    textToSolidShow: Try different languages to pass this tutorial step
-    noSplit: 0
+    textToSplitShow: Try different languages
+    textToSolidShow: Select your language eventually
+    noSplit: 1
 --- !u!1 &1479456868
 GameObject:
   m_ObjectHideFlags: 0
