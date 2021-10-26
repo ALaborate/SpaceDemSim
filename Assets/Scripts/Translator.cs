@@ -103,7 +103,7 @@ public class Translator : CrossPlatformBehaviour
     {
         var key = str;
         //todo its very inefficient
-        foreach (var lang in languages.Values)
+        foreach (var lang in languages.Values) //todo questionable: why do we need to iterate over all languages here instead of taking the key from current language? What if current language does not contain the key? And, optionally, other languages do.
         {
             try
             {
