@@ -176,6 +176,7 @@ public abstract class SubmenuController : MonoBehaviour
 {
     public Button btnBack;
     public virtual bool CanHandleBackClick() { return false; }
+    ///<summary>keep in mind that this method is executed before first start by <see cref="MenuController"/></summary>
     public virtual void OnBecomeVisible() { }
     public event System.Action<SubmenuController> needHideMenu;
     public event System.Action<SubmenuController> needRestoreMenu;

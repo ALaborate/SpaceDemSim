@@ -88,8 +88,8 @@ public class Translator : CrossPlatformBehaviour
     }
     private IEnumerator DelayLangInit()
     {
-        yield return null;
-        yield return null;
+        // yield return null;
+        // yield return null;
         ChangeLanguage(PlayerData.instance.language);
         yield break;
     }

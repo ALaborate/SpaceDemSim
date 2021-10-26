@@ -6792,7 +6792,7 @@ MonoBehaviour:
     splitLabeling: 
     textToSplitShow: Try different languages
     textToSolidShow: Select your language eventually
-    noSplit: 1
+    noSplit: 0
 --- !u!1 &1479456868
 GameObject:
   m_ObjectHideFlags: 0
@@ -7619,8 +7619,8 @@ MonoBehaviour:
     textToSolidShow: My bad, press it now, please...
     noSplit: 0
   dummyButton: {fileID: 1675652648}
-  hiddenDuration: 5
-  delay: 2
+  hiddenDuration: 8
+  delay: 1
 --- !u!114 &1751723148
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -43,8 +43,8 @@ public class TutorialSubmenu : SubmenuController
         while (TutorialActuator.instance == null) yield return null;
         TutorialActuator.instance.Trigger(this, onPressTheButton, new BaseTutorialActuator.TriggeringState());
         yield return new WaitForSeconds(hiddenDuration * .5f);
-        TutorialActuator.instance.Trigger(this, onPressTheButton, new BaseTutorialActuator.TriggeringState());
-        yield return new WaitForSeconds(hiddenDuration * .5f);
+        // TutorialActuator.instance.Trigger(this, onPressTheButton, new BaseTutorialActuator.TriggeringState());
+        // yield return new WaitForSeconds(hiddenDuration * .5f);
         TutorialActuator.instance.Trigger(this, onSorry, getState());
         dummyButton.gameObject.SetActive(true);
         clicked = false;
