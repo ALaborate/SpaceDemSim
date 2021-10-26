@@ -84,7 +84,14 @@ public class Translator : CrossPlatformBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        StartCoroutine(DelayLangInit());
+    }
+    private IEnumerator DelayLangInit()
+    {
+        yield return null;
+        yield return null;
         ChangeLanguage(PlayerData.instance.language);
+        yield break;
     }
 
     public void SubscribeToTranslation(Query query)

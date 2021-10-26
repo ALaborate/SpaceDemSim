@@ -29,7 +29,13 @@ public class SettingsSubmenuController : SubmenuController
             var name = langSelection.options[newValue].text;
             Translator.instance.ChangeLanguage(name);
         });
-        langSelection.value = 0;
+        System.Action<string> newLangHandler = newLang =>
+        {
+            var inx = langSelection.options.FindIndex(od => od.text == newLang);
+            if (inx >= 0 && inx != langSelection.value) langSelection.value = inx;
+        };
+        newLangHandler(Translator.instance.currentLanguageName); //set the current name in dropdown
+        Translator.instance.onNewLanguageSelected += newLangHandler;
     }
 
     public override void OnBecomeVisible()
