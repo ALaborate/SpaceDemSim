@@ -158,14 +158,14 @@ MonoBehaviour:
   minePrefab: {fileID: 2820648436723864708, guid: f907f394010203e4b8ec2d94976e3857,
     type: 3}
   minMineDistance: 50
-  maxMineDistance: 270
-  maxMineVelocity: 1
+  maxMineDistance: 220
+  maxMineVelocity: 0
   maxMineAngularVelocity: 5
-  frustrumMarginLeft: 0.1
-  frustrumMarginRigth: 0.1
-  frustrumMarginTop: 0.1
-  frustrumMarginBottom: 0.3
-  maxExpReward: 6
+  frustrumMarginLeft: 0.4
+  frustrumMarginRigth: 0.4
+  frustrumMarginTop: 0.4
+  frustrumMarginBottom: 0.5
+  maxExpReward: 4
   stableExpPerMine: 1
   maxRewardedTime: 10
   rewardWrtTime:
