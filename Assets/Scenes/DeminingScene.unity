@@ -153,8 +153,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerController: {fileID: 963194230}
   controlButton: {fileID: 1777973933}
-  warpTime: 6
-  minOrientationTime: 10
+  warpTime: 1
+  minOrientationTime: 4
   minePrefab: {fileID: 2820648436723864708, guid: f907f394010203e4b8ec2d94976e3857,
     type: 3}
   minMineDistance: 50

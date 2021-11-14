@@ -48,8 +48,8 @@ MonoBehaviour:
   maxHealth: 10
   destroySelfOnKill: 1
   destroyCorpseAfter: 10
-  maxSpeed: 144
-  acceleration: 24
+  maxSpeed: 288
+  acceleration: 48
   designationChannel: 32
   damage: 100
   go: 0

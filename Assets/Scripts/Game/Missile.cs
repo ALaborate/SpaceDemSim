@@ -22,7 +22,7 @@ public class Missile : DestroyableBehaviour
         if (go)
             speed = Mathf.Min(maxSpeed, speed + acceleration * Time.deltaTime);
 
-        if ((target.GetPosition() - transform.position).magnitude < maxSpeed * 3 * Time.deltaTime)
+        if ((target.GetPosition() - transform.position).magnitude < maxSpeed * 2 * Time.deltaTime)
         {
             var tdb = target as DestroyableBehaviour;
             tdb?.TakeDamage(damage);
